@@ -19,13 +19,23 @@ class QuestionsSummary extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.fromLTRB(0, 0, 30, 0),
-                    child: Text(
-                      ((data['question_index'] as int) + 1).toString(),
-                      style: GoogleFonts.jetBrainsMono(
-                        fontSize: 20,
+                    child: Container(
+                      width: 25,
+                      height: 25,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
                         color: data['user_answer'] == data['correct_answer']
                             ? Colors.lightGreen
                             : Colors.red,
+                      ),
+                      child: Center(
+                        child: Text(
+                          ((data['question_index'] as int) + 1).toString(),
+                          style: GoogleFonts.jetBrainsMono(
+                            fontSize: 15,
+                            color: Colors.white,
+                          ),
+                        ),
                       ),
                     ),
                   ),
